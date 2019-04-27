@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main()
+{
+   int a = 30,*y;
+   y = &a;
+   printf("%p",y);
+   printf("%d\n",*y);
+}
