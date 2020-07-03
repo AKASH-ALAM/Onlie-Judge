@@ -34,6 +34,6 @@ int main(){
     }
 
     //same as vactor 
-    // Here we can add data at front but of vector we can not;
+    // Here we can add data in front but of vector we can not;
     return 0;
 }
