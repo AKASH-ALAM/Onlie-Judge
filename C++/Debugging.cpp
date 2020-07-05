@@ -1,9 +1,8 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 int main(){
-    char ch = 'z';
-    printf("%d\n", ch);
-    
-    return 0;
+    string s; cin >> s;
+    sort(s.begin(), s.end());
+    cout << s << endl;
 }
