@@ -11,4 +11,3 @@ int rev(int a, int b){
 }
 
 sort(array, array+size, rev); // decending order
-The Quick Brown Fox Jumps Over The Lazy Dog.
