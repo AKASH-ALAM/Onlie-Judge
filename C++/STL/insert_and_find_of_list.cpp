@@ -27,7 +27,8 @@ int main(){
     puts("");
 
     it = find(mylist.begin(), mylist.end(), 33);
-    cout << *it << endl;
+    if(it != mylist.end()) cout << "found\n";
+    else cout << "not found\n";
     mylist.insert(it, 44);
 
     for(it = mylist.begin(); it != mylist.end(); it++){
