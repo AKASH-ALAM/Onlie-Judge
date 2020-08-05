@@ -5,6 +5,8 @@ ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
 sort(array, array+size); // #include <algorithm> 
+string s;
+sort(s.begin(), s.end());
 
 int rev(int a, int b){
     return a > b;
