@@ -4,7 +4,8 @@ ios::sync_with_stdio(0);
 ios_base::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
 
-sort(array, array+size); // #include <algorithm> 
+sort(array, array+size); // #include <algorithm>
+ 
 string s;
 
 sort(s.begin(), s.end());
