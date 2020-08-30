@@ -25,7 +25,7 @@ int main(){
         string name; cin >> name;
         it = m.find(name);
         if(it != m.end()){
-            cout << it->first <<"=" << it->second << endl;
+            cout << it->first << "=" << it->second << endl;
         } else {
             cout << "Not found" << endl;
         }

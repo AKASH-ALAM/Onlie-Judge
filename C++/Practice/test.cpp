@@ -1,15 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#define endl '\n'
 using namespace std;
+
 int main(){
-    int i,n,j,c = 0;
-    cin>>n;
-    int arry[1000];
-    for(i = 0; i <= 1000; i++){
-        for(j = 0; j < n; j++){
-            c = i + c;
-            arry[c] = j;
-            c++;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
+
+    string s;   cin >> s;
+    for(int i = 0; i < s.length(); i++){
+        if(s[i] >= 'A' && s[i] <= 'Z'){
+            s[i] = 'a' + (s[i] - 'A');
         }
-        printf("N[%d] = %d\n",i,arry[i]);
     }
+    for(int i = 0; i < s.length(); i++){
+        if(s[i] != 'a' && s[i] != 'e' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u' && s[i] != 'y'){
+            cout << "." << s[i];
+        }
+    } cout << endl;
+
+    return 0;
 }

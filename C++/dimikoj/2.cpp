@@ -26,6 +26,12 @@ using namespace std;
 
 int main(){
     Fast_io;
-    
+    int t;  cin >> t;
+    while(t--){
+        string s;   cin >> s;
+        int len = s[s.size() - 1] - 48; 
+        if(len % 2) cout << "odd" << endl;
+        else cout << "even" << endl;
+    }
     return 0;
 }

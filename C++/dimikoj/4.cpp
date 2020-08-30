@@ -26,6 +26,20 @@ using namespace std;
 
 int main(){
     Fast_io;
-    
+    int t, c = 1; cin >> t;
+    while(t--){
+        int n;  cin >> n;
+        cout << "Case " << c << ": ";
+        if(n == 1) {
+            cout << 1 << endl;
+            continue;
+        }
+        for(int i = 1; i <= (n/2) + 1; i++){
+            if(n % i == 0) cout << i << " ";
+        }
+        if(n > 2)cout << n;
+        cout << endl;
+        c++;
+    }
     return 0;
 }

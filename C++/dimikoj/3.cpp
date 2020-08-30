@@ -25,7 +25,10 @@ const ll INF = 1e18;
 using namespace std;
 
 int main(){
-    Fast_io;
-    
+    //Fast_io;
+    for(int i = 1000, j = 1; i > 0; i--, j++){
+        cout << i << "\t";
+        if(j % 5 == 0) cout << endl;
+    }
     return 0;
 }

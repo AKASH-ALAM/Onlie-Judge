@@ -24,8 +24,30 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
+struct node {
+    int data;
+    struct node* link;
+};
+
+void print(struct node* head) {
+    struct node* temp = head;
+    while(temp != NULL){
+        cout << temp -> data << endl;
+        temp = temp -> link;
+    }
+}
+
 int main(){
     Fast_io;
     
+    struct node* head = NULL;
+    head = (struct node*) malloc(sizeof(struct node));
+    head -> data = 5;
+    head -> link = (struct node*) malloc(sizeof(struct node));
+    head -> link -> data = 10;
+    head -> link -> link = NULL;
+
+    print(head);
+
     return 0;
 }
