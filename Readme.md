@@ -4,12 +4,10 @@ sort(arr, arr+n, greater<int>());
 
     char c, s[100], line[1000];
     scanf("%c", &c);
-
     scanf("%s", s);
 <!-- You can take a string as input in C using scanf(“%s”, s). But, it accepts string only until it finds the first space. -->
     
     scanf("\n");
-    
     scanf("%[^\n]%*c", line);
    <!--  in order to take a line as input, you can use scanf("%[^\n]%*c", s); where  is defined as char s[MAX_LEN] where  is the maximum size of . Here, [] is the scanset character. ^\n stands for taking input until a newline isn't encountered. Then, with this %*c, it reads the newline character and here, the used * indicates that this newline character is discarded. -->
 
