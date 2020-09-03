@@ -84,6 +84,44 @@ Node *search_bst(Node *root, int item){
     return node;
 }
 
+Node *bst_minimum(Node *root){
+    Node *node = root;
+    while(node -> left){
+        node = node -> left;
+    }
+    return node;
+}
+
+Node *bst_transplant(Node *root, Node *current_node, Node *new_node){
+    if(current_node == root) root = new_node;
+    else if(current_node == current_node -> parent -> left){
+        add_left_child(current_node->parent, new_node);
+    }
+    else {
+        add_right_child(current_node->parent, new_node);
+    }
+    return root;
+}
+
+Node *bst_delete(Node *root, Node *node){
+    if(node -> left == NULL){
+        root = bst_transplant(root, node, node -> right);
+    }
+    else if(node -> right == NULL){
+        root = bst_transplant(root, node, node -> left);
+    }
+    else {
+        Node *smallest_node = bst_minimum(node -> right);
+        if(smallest_node->parent != node){
+            root = bst_transplant(root, smallest_node, smallest_node->right);
+            add_right_child(smallest_node, node -> right);            
+        }
+        root = bst_transplant(root, node, smallest_node);
+        add_left_child(smallest_node, node->left);
+    }
+    free(node);
+    return root;
+}
 void in_order(Node *node){
     if(node -> left != nullptr) in_order(node -> left);
     cout << node -> data << " ";
@@ -95,12 +133,14 @@ int main(){
     Node *root = bst_create();
     in_order(root);
     cout << endl;
-    Node *node = search_bst(root, 5);
-    if(node) cout << node -> data << endl;
-    else cout << "Not Found!" << endl;
-    
-    node = search_bst(root, 22);
-    if(node) cout << node -> data << endl;
+    Node *node = search_bst(root, 10);
+    if(node != NULL){
+        cout << "Will delete : " << node -> data << endl;
+        root = bst_delete(root, node);
+        cout << "BST: ";
+        in_order(root);
+        cout << endl;
+    }
     else cout << "Not Found!" << endl;
 
     return 0;
