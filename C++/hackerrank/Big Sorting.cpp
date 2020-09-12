@@ -24,19 +24,20 @@ const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
 
+bool myfunc(string i, string j){
+    int n = i.length(), m = j.length();
+    if(n == m) return i < j;
+    else return n < m;
+}
+
 int main(){
     Fast_io;
     int n;  cin >> n;
     vector <string> str(n);
     for(int i = 0; i < n; i++) {
-        string s; cin >> s;
-        str[i] = s;
+        cin >> str[i];
     }
-    for(int i = 0; i < n; i++){ 
-        for(int j = i + 1; j < n - 1; j++){
-            if(str[i] > str[j]) swap(str[i], str[j]);
-        }
-    }
+    sort(str.begin(), str.end(), myfunc);
     for(int i = 0; i < n; i++) cout << str[i] << endl;
     return 0;
 }
