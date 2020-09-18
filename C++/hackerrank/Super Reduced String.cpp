@@ -1,7 +1,7 @@
 /**
  *    Author:  AKASH-ALAM       
 **/
-#include <bits/stdc++.h>
+/* #include <bits/stdc++.h>
 #define endl        '\n'
 #define db          double
 #define ld          long double
@@ -56,5 +56,20 @@ int main(){
     s2 = myfunc(s);
     if(s2.empty()) cout << "Empty String" << endl;
     else cout << s2 << endl;
+    return 0;
+}
+ */
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s;   cin >> s;
+    for(int i = 0; i < (( (int) s.length()) - 1); i++) {
+        if(s[i] == s[i+1]){
+            s.erase(i,2);
+            i = -1;
+        }
+    }
+    cout << (s.length() ? s:"Empty String");
     return 0;
 }
