@@ -25,6 +25,7 @@ void printKMax(int arr[], int n, int k) {
 
 int main() { 
     //N.B. this is not my code.
+    // and also i don't understand this code. it's to hard understand to me.
 	int t;  cin >> t;
     while(t--){
         int n, k;   cin >> n >> k;
