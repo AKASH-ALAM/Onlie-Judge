@@ -39,7 +39,7 @@ string hackerrankInString(string s) {
     if(s.size() < 10) return no;
     int h = 0, a = 0, c = 0, k = 0, e = 0, r = 0, R = 0, A = 0, n = 0, K = 0;
     for(int i = 0; i < s.size(); i++){
-            if(s[i] == 'h' && !h) h = i+1;
+                 if(s[i] == 'h' && !h)      h = i+1;
             else if(s[i] == 'a' && h && !a) a = i+1; //if (h != 0 and a == 0)
             else if(s[i] == 'c' && a && !c) c = i+1;
             else if(s[i] == 'k' && c && !k) k = i+1;
