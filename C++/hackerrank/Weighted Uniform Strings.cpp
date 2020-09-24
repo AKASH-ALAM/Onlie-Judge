@@ -22,53 +22,33 @@
 const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const ll INF = 1e18; 
+#define MAX 10000001
 using namespace std;
 
-vector <int> v;
+vector <bool> v(MAX);
 void weight_string(string s){
-    int d;
+    int pre = 0, cnt = 1, alphdel;
     for(int i = 0; i < s.size(); i++){
-        d = (int) s[i] - 96;
-        v.push_back(d);
+        alphdel = s[i] - 'a' + 1;
+        if(alphdel == pre) cnt++;
+        else {
+            cnt = 1;
+            pre = alphdel;
+        }
+        v[cnt*alphdel] = true;
     }
+    //for(int i = 0; i < 20; i++) cout << i << " : " << v[i] << endl;
 }
 
-vector <string> weightedUniformStrings(vector <int> q){
-    vector <string> result;        
-    for(int j = 0; j < q.size(); j++){
-        string ans = "No";
-        auto it = find(v.begin(), v.end(), q[j]);
-        if(it != v.end()) ans = "Yes";
-        else {
-            int cnt = 0, ck = 0;
-            for(int i = 0; i < v.size(); i++){
-                if(v[i] == v[i+1]){
-                    cnt += v[i];
-                    ck = v[i];
-                } 
-                else if(ck == v[i]){
-                    cnt += v[i];
-                    if(cnt == q[j]){
-                        ans = "Yes"; 
-                        break;
-                    } 
-                    else cnt = 0;
-                } 
-                else cnt = 0; 
-            }
-        }
-        result.push_back(ans);
-    }
-    return result;
-}
 int main(){
     Fast_io;
     string s;   cin >> s;
-    int n; cin >> n;
-    vector <int> q(n);
-    for(int i = 0; i < n; i++) cin >> q[i];
     weight_string(s);
-    vector <string> ans = weightedUniformStrings(q);
-    for(int i = 0; i < ans.size(); i++) cout << ans[i] << endl;
+    int n, q;   cin >> n;
+    for(int i = 0; i < n; i++){
+        cin >> q;
+        if(v[q]) cout << "Yes" << endl;
+        else cout << "No" << endl;
+    }
     return 0;
 }
