@@ -31,9 +31,8 @@ int main(){
     int best = 0, sum = 0;
     for(int i = 0; i < size; i++){
         sum = max(array[i], sum+array[i]);
-        debug(sum);
+        //debug(sum);
         best = max(best, sum);
-        debug(best);
     }
     cout << best << endl;
     return 0;
