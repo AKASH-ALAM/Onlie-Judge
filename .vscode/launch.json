@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Recurrence",
+            "request": "launch",
+            "mainClass": "Spoj.Recurrence",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Spoj.Main",
+            "projectName": "Competitive-Programming_b39c0928"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JULKA",
             "request": "launch",
             "mainClass": "Spoj.JULKA",
