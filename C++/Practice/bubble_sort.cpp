@@ -13,8 +13,7 @@ void bubble_sort(int arry[], int n){
     }
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
     int n; cin>>n;
     int arry[n]; for(int i = 0; i < n; i++) cin>>arry[i];
     bubble_sort(arry,n);
