@@ -37,7 +37,7 @@ int cycle_length(int n){
 }
 
 int main(){
-    Fast_io;
+    Fast_io
     int a, b;
     while(cin >> a >> b){
         int maxlen = 0;

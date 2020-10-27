@@ -25,10 +25,18 @@ const ld PI = acos((ld)-1);
 const int MOD = 1e9+7;
 const ll INF = 1e18; 
 using namespace std;
-ll BigProblem(int n){ 
-   ll Sum = 0; if(n == 1) return 2;
-    Sum += (n/2) * (2 + n) / 2;
-    Sum += (n/2) * (2 + (n-1)*2) / 2;
+
+ll BigProblem(ll n){ 
+   ll Sum = 0; 
+    if(n % 2 == 1){
+        Sum += ((n/2)+1) * (2 + (n*2)) / 2;
+        Sum += (n/2) * (2 + (n-1)) / 2;
+    }   
+    else{
+        Sum += (n/2) * (2 + (n-1)*2) / 2;
+        Sum += (n/2) * (2 + n) / 2;
+    }  
+    
     return Sum;
 }
 
@@ -36,7 +44,7 @@ int main(){
     Fast_io;
     int t;  cin >> t;
     while(t--){
-        int n;  cin >> n;
+        ll n;  cin >> n;
         cout << BigProblem(n) << endl;
     }
     return 0;
